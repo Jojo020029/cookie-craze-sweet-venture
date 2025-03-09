@@ -15,20 +15,20 @@ const Sprinkles = ({ count = 20 }) => {
 
   useEffect(() => {
     const colors = [
-      'bg-pink-medium',
-      'bg-pink-dark',
-      'bg-yellow-light',
-      'bg-cookie-golden',
-      'bg-cookie-lightBrown',
+      'bg-pink-lightest',
+      'bg-pink-light',
+      'bg-yellow-lightest',
+      'bg-cookie-golden/70',
+      'bg-cookie-tan',
     ];
 
     const newSprinkles = Array.from({ length: count }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
-      size: Math.random() * 12 + 4,
+      size: Math.random() * 8 + 4, // Smaller size range
       color: colors[Math.floor(Math.random() * colors.length)],
       delay: Math.random() * 5,
-      duration: Math.random() * 7 + 8,
+      duration: Math.random() * 7 + 12, // Slower fall
     }));
 
     setSprinkles(newSprinkles);
@@ -49,10 +49,10 @@ const Sprinkles = ({ count = 20 }) => {
           }}
         />
       ))}
-      <style jsx>{`
+      <style>{`
         .sprinkle {
           animation: fall linear infinite;
-          opacity: 0.6;
+          opacity: 0.5;
         }
       `}</style>
     </div>
