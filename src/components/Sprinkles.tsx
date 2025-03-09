@@ -10,7 +10,7 @@ type Sprinkle = {
   duration: number;
 };
 
-const Sprinkles = ({ count = 20 }) => {
+const Sprinkles = ({ count = 30 }) => {
   const [sprinkles, setSprinkles] = useState<Sprinkle[]>([]);
 
   useEffect(() => {
@@ -25,10 +25,10 @@ const Sprinkles = ({ count = 20 }) => {
     const newSprinkles = Array.from({ length: count }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
-      size: Math.random() * 8 + 4, // Smaller size range
+      size: Math.random() * 10 + 6, // Larger size range
       color: colors[Math.floor(Math.random() * colors.length)],
       delay: Math.random() * 5,
-      duration: Math.random() * 7 + 12, // Slower fall
+      duration: Math.random() * 10 + 15, // Slower fall
     }));
 
     setSprinkles(newSprinkles);
@@ -39,7 +39,7 @@ const Sprinkles = ({ count = 20 }) => {
       {sprinkles.map((sprinkle) => (
         <div
           key={sprinkle.id}
-          className={`sprinkle ${sprinkle.color}`}
+          className={`sprinkle ${sprinkle.color} rounded-full`}
           style={{
             width: `${sprinkle.size}px`,
             height: `${sprinkle.size}px`,
@@ -51,8 +51,20 @@ const Sprinkles = ({ count = 20 }) => {
       ))}
       <style>{`
         .sprinkle {
+          position: absolute;
+          top: -20px;
           animation: fall linear infinite;
-          opacity: 0.5;
+          opacity: 0.7;
+          box-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+        
+        @keyframes fall {
+          0% {
+            transform: translateY(-20px) rotate(0deg);
+          }
+          100% {
+            transform: translateY(100vh) rotate(360deg);
+          }
         }
       `}</style>
     </div>
