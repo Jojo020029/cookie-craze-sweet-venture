@@ -82,7 +82,7 @@ const Product = () => {
       <div className="section-container relative z-10">
         <h2 
           ref={titleRef}
-          className="text-4xl md:text-5xl font-quicksand font-bold mb-16 text-center opacity-0"
+          className="text-4xl md:text-5xl font-cormorant font-bold mb-16 text-center opacity-0"
         >
           Our <span className="text-pink-dark">Premium</span> Cookie Box
         </h2>
@@ -105,11 +105,11 @@ const Product = () => {
               ref={textRef}
               className="opacity-0 mb-8"
             >
-              <h3 className="text-2xl md:text-3xl font-quicksand text-cookie-lightBrown mb-4">Assorted Cookie Collection</h3>
-              <p className="text-lg text-cookie-lightBrown mb-6">
+              <h3 className="text-2xl md:text-3xl font-cormorant text-cookie-lightBrown mb-4">Assorted Cookie Collection</h3>
+              <p className="text-lg font-playfair text-cookie-lightBrown mb-6">
                 Our premium cookie box comes with a delightful assortment of our four signature flavors:
               </p>
-              <ul className="space-y-2 text-cookie-lightBrown">
+              <ul className="space-y-2 text-cookie-lightBrown font-playfair">
                 <li className="flex items-center">
                   <span className="w-3 h-3 bg-cookie-golden rounded-full mr-2"></span>
                   <span>Classic Cookie - The perfect balance of chewy and crispy</span>
@@ -131,19 +131,19 @@ const Product = () => {
             
             <div 
               ref={priceRef}
-              className="opacity-0 mb-8 bg-white/70 p-6 rounded-lg shadow-md backdrop-blur-sm hover:shadow-xl transition-all duration-300"
+              className="opacity-0 mb-8 bg-white/70 p-6 rounded-lg shadow-md backdrop-blur-sm hover:shadow-xl transition-all duration-300 mt-12"
               style={{ transform: `translateY(${scrollY * -0.03}px)` }}
             >
               <div className="flex justify-between items-center">
-                <span className="text-xl font-quicksand text-cookie-lightBrown">Price:</span>
-                <span className="text-3xl font-dancing text-pink-dark">$24.99</span>
+                <span className="text-xl font-cormorant text-cookie-lightBrown">Price:</span>
+                <span className="text-3xl font-playfair text-pink-dark">$24.99</span>
               </div>
-              <p className="text-sm text-cookie-lightBrown mt-2">Each box contains 12 cookies (3 of each flavor)</p>
+              <p className="text-sm font-playfair text-cookie-lightBrown mt-2">Each box contains 12 cookies (3 of each flavor)</p>
             </div>
             
             <button 
               ref={buttonRef}
-              className="opacity-0 bg-pink-medium hover:bg-pink-dark text-white font-quicksand font-bold text-xl py-3 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl w-full"
+              className="opacity-0 bg-pink-medium hover:bg-pink-dark text-white font-cormorant font-bold text-xl py-3 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl w-full"
             >
               Add to Cart
             </button>

@@ -49,18 +49,22 @@ const Hero = () => {
     <section id="home" className="min-h-screen pt-20 flex items-center relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-pink-lightest/70 to-yellow-lightest/60 z-0"></div>
       
-      {/* Floating elements for parallax effect */}
+      {/* Enhanced floating elements for parallax effect */}
       <div 
-        className="absolute w-12 h-12 rounded-full bg-pink-lightest top-1/4 left-1/4 opacity-60"
-        style={{ transform: `translateY(${scrollY * 0.2}px)` }}
+        className="absolute w-12 h-12 rounded-full bg-gradient-to-r from-pink-lightest to-pink-light top-1/4 left-1/4 opacity-60 blur-sm"
+        style={{ transform: `translateY(${scrollY * 0.2}px) rotate(${scrollY * 0.01}deg)` }}
       ></div>
       <div 
-        className="absolute w-16 h-16 rounded-full bg-yellow-lightest top-1/3 right-1/4 opacity-60"
-        style={{ transform: `translateY(${scrollY * -0.3}px)` }}
+        className="absolute w-16 h-16 rounded-full bg-gradient-to-r from-yellow-lightest to-yellow-light top-1/3 right-1/4 opacity-60 blur-sm"
+        style={{ transform: `translateY(${scrollY * -0.3}px) rotate(${scrollY * -0.01}deg)` }}
       ></div>
       <div 
-        className="absolute w-10 h-10 rounded-full bg-cookie-tan bottom-1/4 left-1/3 opacity-50"
-        style={{ transform: `translateY(${scrollY * 0.15}px)` }}
+        className="absolute w-10 h-10 rounded-full bg-gradient-to-r from-cookie-tan to-cookie-golden bottom-1/4 left-1/3 opacity-50 blur-sm"
+        style={{ transform: `translateY(${scrollY * 0.15}px) rotate(${scrollY * 0.02}deg)` }}
+      ></div>
+      <div 
+        className="absolute w-14 h-14 rounded-full bg-gradient-to-r from-pink-light to-pink-medium top-2/3 right-1/3 opacity-40 blur-sm"
+        style={{ transform: `translateY(${scrollY * -0.25}px) rotate(${scrollY * -0.02}deg)` }}
       ></div>
       
       <div className="section-container z-10 relative">
@@ -68,7 +72,7 @@ const Hero = () => {
           <div className="flex flex-col justify-center text-center md:text-left">
             <h1 
               ref={titleRef}
-              className="text-4xl md:text-6xl lg:text-7xl font-quicksand font-bold mb-4"
+              className="text-4xl md:text-6xl lg:text-7xl font-cormorant font-bold mb-4"
             >
               Welcome to <br />
               <span className="text-pink-medium">Cookie</span>
@@ -77,7 +81,7 @@ const Hero = () => {
             
             <p 
               ref={subtitleRef}
-              className="text-xl md:text-2xl mb-8 opacity-0 font-nunito text-cookie-lightBrown"
+              className="text-xl md:text-2xl mb-8 opacity-0 font-playfair text-cookie-lightBrown"
             >
               Bite into happiness with our deliciously cute cookies! Each one is baked with love and a sprinkle of magic.
             </p>
@@ -85,25 +89,27 @@ const Hero = () => {
             <a 
               ref={buttonRef}
               href="#flavors" 
-              className="opacity-0 bg-pink-light hover:bg-pink-medium text-cookie-lightBrown font-quicksand font-bold text-xl py-3 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105 mx-auto md:mx-0 inline-block"
+              className="opacity-0 bg-pink-light hover:bg-pink-medium text-cookie-lightBrown font-cormorant font-bold text-xl py-3 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105 mx-auto md:mx-0 inline-block"
             >
               Explore Flavors
             </a>
           </div>
           
           <div className="flex justify-center md:justify-end items-center relative">
-            {/* Main cookie image */}
+            {/* Lighting effects */}
+            <div className="absolute inset-0 bg-gradient-to-r from-pink-lightest to-yellow-lightest opacity-30 rounded-full blur-xl"
+              style={{ transform: `translateY(${scrollY * 0.02}px) scale(1.2)` }}></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-pink-light/30 to-yellow-light/30 opacity-40 rounded-full blur-lg"
+              style={{ transform: `translateY(${scrollY * -0.03}px) scale(0.9)` }}></div>
+            
+            {/* Main cookie image with enhanced animation */}
             <img 
               ref={imageRef}
               src="/lovable-uploads/76fb2d05-a1fc-4e1b-9319-a58f9d77a721.png" 
               alt="Cookie Craze Mascot" 
-              className="opacity-0 w-full max-w-md animate-float z-10 relative"
+              className="opacity-0 w-full max-w-md animate-float z-10 relative hover:scale-105 transition-transform duration-300"
               style={{ transform: `translateY(${scrollY * -0.05}px)` }}
             />
-            
-            {/* Background effects */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-pink-lightest/30 rounded-full filter blur-xl" 
-              style={{ transform: `translateY(${scrollY * 0.02}px)` }}></div>
           </div>
         </div>
       </div>

@@ -65,10 +65,10 @@ export default {
 				},
 				// Cookie Craze custom colors - lighter version
 				cookie: {
-					brown: '#8B5A2B',     // Lighter brown
-					lightBrown: '#9F7B61', // Even lighter brown for text
-					golden: '#E9B44C',    // More vibrant golden
-					tan: '#F5D6A8'        // New tan color
+					brown: '#A57C52',     // Lighter brown
+					lightBrown: '#B89F8D', // Even lighter brown for text
+					golden: '#EFCB76',    // More vibrant golden
+					tan: '#F9E5C7'        // New tan color
 				},
 				pink: {
 					lightest: '#FFF0F3',  // New very light pink
@@ -88,9 +88,8 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				quicksand: ['Quicksand', 'sans-serif'],
-				nunito: ['Nunito', 'sans-serif'],
-				dancing: ['Dancing Script', 'cursive']
+				cormorant: ['Cormorant Garamond', 'serif'],
+				playfair: ['Playfair Display', 'serif']
 			},
 			keyframes: {
 				'accordion-down': {
@@ -137,6 +136,10 @@ export default {
 				'scale-in': {
 					'0%': { transform: 'scale(0)', opacity: '0' },
 					'100%': { transform: 'scale(1)', opacity: '1' }
+				},
+				'glow-pulse': {
+					'0%, 100%': { opacity: '0.6', filter: 'blur(15px)' },
+					'50%': { opacity: '1', filter: 'blur(20px)' }
 				}
 			},
 			animation: {
@@ -150,7 +153,8 @@ export default {
 				'slide-in-right': 'slide-in-right 0.5s ease-out',
 				'slide-in-left': 'slide-in-left 0.5s ease-out',
 				'slide-in-bottom': 'slide-in-bottom 0.5s ease-out',
-				'scale-in': 'scale-in 0.5s ease-out'
+				'scale-in': 'scale-in 0.5s ease-out',
+				'glow-pulse': 'glow-pulse 3s ease-in-out infinite'
 			}
 		}
 	},
